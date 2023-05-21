@@ -1,0 +1,14 @@
+version: '3'
+services:
+    frontend:
+        restart: unless-stopped
+        image: frontend
+        build: ./frontend
+        ports:
+            - 8080:80/tcp
+    backend:
+        restart: unless-stopped
+        image: backend
+        build: ./backend
+        ports:
+            - 3000:3000/tcp
